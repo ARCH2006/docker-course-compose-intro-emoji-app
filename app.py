@@ -23,10 +23,12 @@ def index():
 
 
 # This is all for Beanstalk deployment
-@app.route("/health")
+@app.route("/HEALTH")
 def health():
     return "OK", 200
-
+@app.route("/hellokeerthana")
+def hello():
+    return "not ok keerthan",200
 
 @app.route("/emojis")
 def show_emojis():
@@ -50,10 +52,10 @@ def show_emojis():
 
 # @app.route("/hello")
 # def check():
-#     random_index = random.randint(0, redis_db.llen("emojis") - 1)
-#     emoji = redis_db.lindex("emojis", random_index)
+#    random_index = random.randint(0, redis_db.llen("emojis") - 1)
+#    emoji = redis_db.lindex("emojis", random_index)
 
-#     return render_template("hello.html", emoji=emoji)
+#    return render_template("hello.html", emoji=emoji)
 
 
 if __name__ == "__main__":
